@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-interface LoginProps {
-  onLogin: () => void;
-}
-
-const Login: React.FC<LoginProps> = ({ onLogin }) => {
+const Login: React.FC = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -13,7 +11,8 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     const storedPassword = localStorage.getItem('password');
 
     if (username === storedUsername && password === storedPassword) {
-      onLogin();
+      // Redirect to dashboard upon successful login
+      navigate('/dashboard');
     } else {
       alert('Invalid username or password');
     }

@@ -1,14 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-interface DashboardProps {
-  onLogout: () => void;
-}
+const Dashboard: React.FC = () => {
+  const navigate = useNavigate();
 
-const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
   const handleLogout = () => {
     localStorage.removeItem('username');
     localStorage.removeItem('password');
-    onLogout();
+    // Redirect to login page upon logout
+    navigate('/');
   };
 
   return (

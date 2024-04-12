@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,54 +40,57 @@ const Header = () => {
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-5">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-gray-600 hover:text-gray-400 text-[1.2rem] font-monts font-medium"
             >
               Home
-            </a>
-            <a
-              href="/about"
+            </Link>
+            <Link
+              to="/about"
               className="text-gray-600 hover:text-gray-400 text-[1.2rem] font-monts font-medium"
             >
               About
-            </a>
-            <a
-              href="/login"
+            </Link>
+            <Link
+              to="/careers"
               className="text-gray-600 hover:text-gray-400 text-[1.2rem] font-monts font-medium"
             >
               Careers
-            </a>
-          
+            </Link>
+            <Link to="/signup">
               <button className="bg-gray-700 hover:bg-gray-400 text-white font-medium py-2 px-6 rounded-[1rem] text-[1.2rem] font-monts">
                 Sign Up
               </button>
+            </Link>
           </div>
         </div>
         {/* Responsive Menu */}
         {isOpen && (
           <div className="md:hidden bg-gray-700 py-2">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="block text-white px-4 py-2 font-monts font-medium"
             >
               Home
-            </a>
-            <a
-              href="/about"
+            </Link>
+            <Link
+              to="/about"
               className="block text-white px-4 py-2 font-monts font-medium"
             >
               About
-            </a>
-            <a
-              href="/careers"
+            </Link>
+            <Link
+              to="/careers"
               className="block text-white px-4 py-2 font-monts font-medium"
             >
               Careers
-            </a>
-            <button className="pt-2 bg-gray-700 hover:bg-gray-400 text-white font-medium py-4 md:px-6 md:rounded-[2rem] rounded-lg text-[1.2rem] font-monts w-full sm:w-auto items-start">
-              Get Started
-            </button>
+            </Link>
+            <Link to="/signup">
+              <button className="pt-2 bg-gray-700 hover:bg-gray-400 text-white font-medium py-4 md:px-6 md:rounded-[2rem] rounded-lg text-[1.2rem] font-monts w-full sm:w-auto items-start">
+                Get Started
+              </button>
+            </Link>
           </div>
         )}
       </div>
