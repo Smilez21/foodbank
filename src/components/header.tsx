@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
   return (  
-    <div className="fixed w-full z-10 md:p-4">
+    <div className={`fixed w-full z-10 md:p-4 ${
+      scrolling ? "bg-opacity-40 bg-white" : ""
+    }`}
+    style={{ backdropFilter: scrolling ? "blur(10px)" : "none" }}
+  >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4 font-monts">
           <p className="text-gray-700 text-3xl font-bold">

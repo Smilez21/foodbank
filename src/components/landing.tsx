@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Header from "./header";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS CSS
+import { Link } from "react-router-dom";
 
 const landing = () => {
   React.useEffect(() => {
@@ -26,13 +27,15 @@ const landing = () => {
             in need. Together, let's create a world where no one goes to bed
             hungry. Start sharing the love today.
           </p>
-          <button
-            className="bg-gray-700 hover:bg-gray-400 text-white font-bold py-4 mr-10 md:px-6 md:rounded-[1rem] rounded-lg text-[1.2rem] font-monts w-full sm:w-auto items-start "
-            data-aos="fade-up"
-            data-aos-duration="3000"
-          >
-            Get Started
-          </button>
+          <Link to="/login">
+            <button
+              className="bg-gray-700 hover:bg-gray-400 text-white font-bold py-4 mr-10 md:px-6 md:rounded-[1rem] rounded-lg text-[1.2rem] font-monts w-full sm:w-auto items-start "
+              data-aos="fade-up"
+              data-aos-duration="3000"
+            >
+              Get Started
+            </button>
+          </Link>
         </div>
 
         <div className="flex justify-center " data-aos="fade-left">
