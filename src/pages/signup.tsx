@@ -1,53 +1,80 @@
 // Signup.js
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSignup = () => {
-    // Check if username, password, and phone number are not empty
-    if (username.trim() !== '' && password.trim() !== '' && phoneNumber.trim() !== '') {
-      // Save user to local storage
-      localStorage.setItem('username', username);
-      localStorage.setItem('password', password);
-      localStorage.setItem('phoneNumber', phoneNumber);
-      // Redirect to login
-      window.location.href = '/login';
-    } else {
-      alert('Please enter valid username, password, and phone number');
-    }
+    // Save user data to local storage
+    localStorage.setItem("username", username);
+    localStorage.setItem("email", email);
+    localStorage.setItem("phoneNumber", phoneNumber);
+    localStorage.setItem("password", password);
+
+    // Redirect to login
+    window.location.href = "/login";
   };
 
   return (
-    <div className="container mx-auto mt-8">
-      <h2 className="text-xl font-bold mb-4">Signup</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        className="border border-gray-400 rounded px-3 py-2 mb-4 w-full"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="border border-gray-400 rounded px-3 py-2 mb-4 w-full"
-      />
-      <input
-        type="text"
-        placeholder="Phone Number"
-        value={phoneNumber}
-        onChange={(e) => setPhoneNumber(e.target.value)}
-        className="border border-gray-400 rounded px-3 py-2 mb-4 w-full"
-      />
-      <button onClick={handleSignup} className="bg-blue-500 text-white px-4 py-2 rounded">
-        Signup
-      </button>
+    <div className="flex relative md:bg-gray-100 bg-gray-200 flex-col items-center justify-center min-h-screen">
+      <div className="bg-white p-6 rounded-lg shadow-md w-full md:max-w-md">
+        <h2 className="text-2xl font-semibold text-center mb-4">Sign Up</h2>
+        <div className="mb-4">
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="border rounded px-3 py-2 mb-4 w-full"
+          />
+        </div>
+        <div className="mb-4">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="border rounded px-3 py-2 mb-4 w-full"
+          />
+        </div>
+        <div className="">
+          <input
+            type="text"
+            placeholder="Phone Number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            className="border rounded px-3 py-2 mb-4 w-full"
+          />
+        </div>
+        <div className="">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="border rounded px-3 py-2 mb-4 w-full"
+          />
+        </div>
+        <div className="">
+          <button
+            onClick={handleSignup}
+            className="bg-gray-500 w-full h-[3rem] py-4 flex justify-center items-center text-white px-4 py-2 rounded text-bold hover:bg-gray-600 hover:text-white"
+          >
+            Signup
+          </button>
+        </div>
+        <p className="mt-4 text-[0.5rem] md:text-black leading-trim tracking-wide font-general-sans text-base leading-5">
+          Already have an account?
+          <Link className="text-[#066163] font-medium text-center" to="/login">
+            {" "}
+            Login
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
