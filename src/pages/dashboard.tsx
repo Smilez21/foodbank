@@ -17,7 +17,7 @@ const Dashboard: React.FC = () => {
   }, [navigate]);
 
   const handleLogout = () => {
-    
+     
     // Redirect to login page upon logout
     navigate('/');
   };
