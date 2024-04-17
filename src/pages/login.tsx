@@ -43,7 +43,7 @@ const Login = () => {
         </div>
         <button
           onClick={handleLogin}
-          className="bg-gray-500 w-full h-[3rem] py-4 flex justify-center items-center text-white px-4 py-2 rounded text-bold hover:bg-gray-600 hover:text-white"
+          className="bg-gray-500 w-full h-[3rem] py-4 flex justify-center items-center text-white px-4 rounded text-bold hover:bg-gray-600 hover:text-white"
         >
           Login
         </button>
