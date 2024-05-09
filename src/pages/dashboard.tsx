@@ -11,7 +11,7 @@ const Dashboard: React.FC = () => {
     if (storedUsername) {
       setUsername(storedUsername);
     } else {
-      // If username is not found in local storage, redirect to login
+      // If username is not found in local storage, redirect to login 
       navigate('/');
     }
   }, [navigate]);
