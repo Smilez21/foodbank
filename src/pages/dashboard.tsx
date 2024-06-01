@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../components/SideBar";
+import SideBar
+ from "../components/SideBar";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard: React.FC = () => {
