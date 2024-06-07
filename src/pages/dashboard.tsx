@@ -28,7 +28,7 @@ const Dashboard: React.FC = () => {
       <Sidebar />
       <div className="">
         <h2 className="text-xl font-bold mb-4">Dashboard</h2>
-        <p>Hello {username}, welcome to your dashboard!</p>
+        <p>Hello {username}, welcome to your dashboard!</p> 
         <button
           onClick={handleLogout} 
           className="bg-red-500 text-white px-4 py-2 rounded mt-4"
