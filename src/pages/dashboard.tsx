@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import SideBar
- from "../components/SideBar";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard: React.FC = () => {
@@ -25,7 +23,6 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="">
-      <Sidebar />
       <div className="">
         <h2 className="text-xl font-bold mb-4">Dashboard</h2>
         <p>Hello {username}, welcome to your dashboard!</p> 
