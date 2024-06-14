@@ -28,7 +28,7 @@ const Dashboard: React.FC = () => {
         <p>Hello {username}, <span className="text-xl font-bold mb-4">welcome</span></p> 
         <button
           onClick={handleLogout}  
-          className="bg-red-500 text-white px-4 py-2 rounded mt-4" 
+          className="bg-red-500 text-white px-4 py-2 rounded mt-4"  
         > 
           Logout
         </button>
