@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
-
+ 
   useEffect(() => {
     // Retrieve username from local storage
     const storedUsername = localStorage.getItem("username");
