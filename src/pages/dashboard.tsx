@@ -19,7 +19,7 @@ const Dashboard: React.FC = () => {
   const handleLogout = () => {
     // Redirect to login page upon logout
     navigate("/");
-  };
+  }; 
 
   return (
     <div className="">
